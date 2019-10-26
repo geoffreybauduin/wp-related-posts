@@ -3,7 +3,7 @@
 * Plugin Name: Related posts
 * Plugin URI: https://github.com/geoffreybauduin/wp-related-posts
 * Description: Related posts
-* Version: 1.0
+* Version: 1.1
 * Author: Geoffrey Bauduin
 * Author URI: https://github.com/geoffreybauduin/wp-related-posts
 */
@@ -28,6 +28,7 @@ function wpb_related_pages($atts) {
             'post__not_in' => array($post->ID),
             'nopaging' => true,
             'posts_per_page' => -1,
+            'post_status' => "publish",
         );
         $query = new WP_Query($args);
         if ($query->have_posts())
